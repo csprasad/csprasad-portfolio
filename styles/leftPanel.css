@@ -22,7 +22,7 @@ header {
 .dot {
     font-size: 5px;
     border-radius: 5px;
-    color: #ff9500; 
+    color: #00E959; 
 }
 
 .contact a {
@@ -152,4 +152,73 @@ p {
     line-height: 1.6;
     max-width: 400px;
     margin: 0 auto; /* Centered text */
+}
+
+/**************
+   App icons on lef panel
+***************/
+
+.icon-container {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.icon {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    /* background-color: #3498db; */
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.3s;
+    overflow: hidden;
+}
+
+.icon:hover {
+    transform: scale(1.1);
+}
+
+.icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.popup {
+    position: absolute;
+    left: 80px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #2c3e50;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 14px;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+    z-index: 10;
+}
+
+.icon:hover .popup,
+.icon:active .popup {
+    opacity: 1;
+    visibility: visible;
+}
+
+.popup::before {
+    content: '';
+    position: absolute;
+    left: -8px;
+    top: 50%;
+    transform: translateY(-50%);
+    border-right: 8px solid #2c3e50;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
 }
